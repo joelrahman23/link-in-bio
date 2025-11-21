@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,21 +16,29 @@
       align-items: center;
     }
     .container {
-      max-width: 500px;
+      max-width: 420px;
       width: 100%;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 16px;
+      margin-top: 24px;
     }
     h1 {
       text-align: center;
       margin-bottom: 20px;
       font-size: 28px;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
     }
     .section {
       margin-bottom: 30px;
       padding: 20px;
       background: #1a1a1a;
       border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeUp 0.5s ease forwards;
+      animation-delay: 0.15s;
     }
     .section h2 {
       font-size: 20px;
@@ -41,15 +48,82 @@
     }
     .link-item {
       margin: 10px 0;
-      padding: 12px;
+      padding: 14px 16px;
       background: #222;
-      border-radius: 10px;
+      border-radius: 12px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      opacity: 0;
+      animation: fadeUp 0.5s ease forwards;
+      animation-delay: 0.25s;
+      touch-action: manipulation;
+    }
+    .link-item:hover {
+      background: #292929;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
     }
     .link-item a {
       color: #ffd700;
       text-decoration: none;
       font-size: 16px;
       font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+      @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes clickTap {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(0.96);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .link-item:active {
+      background: #303030;
+      animation: clickTap 0.16s ease-out;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        align-items: stretch;
+      }
+      .container {
+        max-width: 100%;
+        margin-top: 16px;
+        padding: 12px 14px 24px;
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      .section {
+        padding: 16px;
+        margin-bottom: 20px;
+      }
+      .link-item {
+        padding: 14px 14px;
+      }
     }
   </style>
 </head>
@@ -59,37 +133,38 @@
 
     <div class="section">
       <h2>🚗 My Car Setup</h2>
-      <div class="link-item"><a href="#">Car Scent Diffuser</a></div>
-      <div class="link-item"><a href="#">Detailing Kit</a></div>
-      <div class="link-item"><a href="#">Microfiber Towels</a></div>
-      <div class="link-item"><a href="#">Radar Detector</a></div>
-      <div class="link-item"><a href="#">Interior LED Kit</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=car+air+freshener+diffuser&tag=youownitthank-20">🚘 Car Scent Diffuser</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=car+detailing+kit&tag=youownitthank-20">🧽 Detailing Kit</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=microfiber+towels+for+car+detailing&tag=youownitthank-20">🧼 Microfiber Towels</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=radar+detector&tag=youownitthank-20">📡 Radar Detector</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=interior+car+led+lights&tag=youownitthank-20">💡 Interior LED Kit</a></div>
     </div>
 
     <div class="section">
       <h2>😎 Grooming</h2>
-      <div class="link-item"><a href="#">Beard Trimmer</a></div>
-      <div class="link-item"><a href="#">Skincare Routine</a></div>
-      <div class="link-item"><a href="#">Facial Steamer</a></div>
-      <div class="link-item"><a href="#">Top Colognes</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=beard+trimmer+for+men&tag=youownitthank-20">✂️ Beard Trimmer</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=mens+skincare+kit&tag=youownitthank-20">🧴 Skincare Routine</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=facial+steamer&tag=youownitthank-20">💨 Facial Steamer</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=mens+cologne&tag=youownitthank-20">🌹 Top Colognes</a></div>
     </div>
 
     <div class="section">
       <h2>🔥 Confidence & Lifestyle</h2>
-      <div class="link-item"><a href="#">Superior Man Book</a></div>
-      <div class="link-item"><a href="#">Models (Dating Book)</a></div>
-      <div class="link-item"><a href="#">Rings / Jewelry</a></div>
-      <div class="link-item"><a href="#">Sunglasses</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/Way-Superior-Man-Challenges-Anniversary/dp/1622038320?tag=youownitthank-20">📘 Superior Man Book</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/Models-Attract-Women-Through-Honesty/dp/1463750358?tag=youownitthank-20">📕 Models (Dating Book)</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=mens+rings+jewelry&tag=youownitthank-20">💍 Rings / Jewelry</a></div>
+      <div class="link-item"><a href="https://www.amazon.com/s?k=mens+polarized+sunglasses&tag=youownitthank-20">🕶️ Sunglasses</a></div>
     </div>
 
     <div class="section">
       <h2>💰 Quick Money / Freebies</h2>
-      <div class="link-item"><a href="#">Free Car Insurance Quote</a></div>
-      <div class="link-item"><a href="#">Free Credit Score Check</a></div>
-      <div class="link-item"><a href="#">Crypto Signup Bonus</a></div>
-      <div class="link-item"><a href="#">Fitness App Free Trial</a></div>
+      <div class="link-item"><a href="#">🧾 Free Car Insurance Quote</a></div>
+      <div class="link-item"><a href="#">📊 Free Credit Score Check</a></div>
+      <div class="link-item"><a href="#">₿ Crypto Signup Bonus</a></div>
+      <div class="link-item"><a href="#">💪 Fitness App Free Trial</a></div>
     </div>
 
   </div>
+  <p style="text-align:center; color:#777; font-size:12px; margin-top:20px;">Some links are affiliate. I may earn a commission.</p>
 </body>
 </html>
